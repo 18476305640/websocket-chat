@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: websocket-chatroom
+  mvc:
+    view:
+      suffix: .html
+#      prefix: /templates/
+server:
+  port: 5910
+#登录用的测试密码,需要自行修改
+chat:
+  login:
+    password: 3333

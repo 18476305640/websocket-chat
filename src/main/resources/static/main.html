@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/lib/jquery-3.5.1.min.js" ></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div id="content">
+        <div id="left">
+            <div id="andWhoChat" >选择一个好友开始聊天</div>
+            <div id="viewAndInput">
+                <div id="chatContent">
+<!--                    <div class="outside">-->
+<!--                        <img src="img/headImg.svg" />-->
+<!--                        <span class="text">你好，兄弟</span>-->
+<!--                    </div>-->
+<!--                    <div class="my">-->
+<!--                        <img src="img/headImg.svg" />-->
+<!--                        <span class="text">你是？</span>-->
+<!--                    </div>-->
+
+
+
+                </div>
+                <div id="contentInput" >
+                    <textarea placeholder="在此输入文字信息..." id="chatInput"></textarea>
+                    <button id="send">发送</button>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <div id="profile">
+                <span id="currentUser">当前用户：</span>
+                <span class="offline" id="state">离线</span>
+            </div>
+            <div id="myFriends">
+                <div>好友列表</div>
+                <ul>
+<!--                    <li>大聪明</li>-->
+                </ul>
+            </div>
+            <div id="sysNotice">
+                <div>系统通知</div>
+                <div id="sysNoticeContainer">
+<!--                    <p>小猪已上线！</p>-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

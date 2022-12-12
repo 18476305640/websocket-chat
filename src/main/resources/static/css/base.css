@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+#content {
+    border: 1px solid #efefef;
+}
+body {
+    background: #f6f6f6;
+}
