@@ -133,8 +133,9 @@ $(function () {
                 // 维护全局变量
                 currentUsername = username;
                 // 有信息（用户名）
-                $("#currentUser").text($("#currentUser").text()  + username)
+                $("#currentUser").text($("#currentUser").text()  + (username==null?"":username))
                 // 初始化聊天数据（还原）
+
                 initChatData();
                 resolve();
             }
