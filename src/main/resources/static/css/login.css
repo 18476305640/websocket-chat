@@ -26,13 +26,18 @@
 
 }
 #form > div {
-    width: 70%;
-    margin: 10px auto;
+    width: 60%;
+    margin: 10px 0px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+#submitDiv {
+    justify-content: center !important;
+    margin-top: 30px !important;
 }
 input[type='text'],input[type='password'] {
-    width: 60%;
+    width: 70%;
     height: 30px;
     background: #f6f6f6;
     border: none;
@@ -49,5 +54,6 @@ input[type='text'],input[type='password'] {
 }
 label {
     color: #5f6368;
+    white-space: nowrap;
 }
 
