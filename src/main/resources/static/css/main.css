@@ -28,6 +28,7 @@
     font-size: 18px;
     line-height: 40px;
     border-bottom: 2px solid #f6f6f6;
+
 }
 #contentInput {
     height: 150px;
@@ -36,7 +37,12 @@
 }
 #chatContent {
     position: absolute;
-    top: 40px;
+    top: 42px;
+    bottom: 150px;
+    width: 100%;
+    padding: 10px 5px 10px 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 #contentInput > textarea {
     width: 100%;
@@ -122,6 +128,7 @@
 #myFriends > *:nth-child(2)>li:hover {
     color: #a1a1a1;
 }
+
 #myFriends > div,#sysNotice > div:nth-child(1) {
     color: #5f6368;
     text-align: center;
@@ -138,24 +145,28 @@
     font-family: "宋体";
     margin: 2px 0px;
     font-size: 15px;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
-.outside {
+.outside,.my {
     display: block;
     width: 100%;
-    margin: 2px 0px;
+    margin: 5px 0px;
     position: relative;
+    align-items: center;
 }
-.outside > img {
-
+.my {
+    display: flex;
+    justify-content: right;
+}
+.outside {
+    display: flex;
+    justify-content: left;
+}
+.outside > img,.my > img {
     height: 40px;
     width: 40px;
-    float: left;
-}
-.text {
-    padding: 6px 10px;
-    border-radius: 4px;
-    max-width: 60%;
-    min-width: 20px;
+    align-self: flex-start
 }
 .outside > span {
     display: inline-block;
@@ -164,34 +175,31 @@
     margin-left: 5px;
 
 }
-.my {
-    width: 100%;
-    display: block;
-    margin: 2px 0px;
-    float: right;
-    position: relative;
-}
-.my > img {
-    width: 40px;
-    height: 40px;
-    float: right;
-}
 .my > span {
     display: inline-block;
-    position: absolute;
-    right: 45px;
-    top: 5px;
     background: #95ec69;
+}
+.text {
+    padding: 6px 10px;
+    border-radius: 4px;
+    max-width: 65%;
+    min-width: 20px;
+    word-wrap: break-word;
 }
 #viewAndInput {
     width: 100%;
 
+
 }
-#chatContent {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
+
+.chatContent::-webkit-scrollbar {
+    /*display: none;*/
+    border: none;
 }
+.chatContent::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0);
+}
+
 
 
 

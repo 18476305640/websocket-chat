@@ -37,18 +37,35 @@ $(function () {
         // 持久化
         chatDataToLocal();
     }
+
+    // 聊天容器滚动
+    function chatContainerScroll(toHeight) {
+        let chatContent = document.getElementById("chatContent");
+        chatContent.scrollTop = toHeight;
+    }
+    function chatContainerScrollToBottom() {
+        let chatContent = document.getElementById("chatContent");
+        chatContainerScroll(chatContent.scrollHeight - chatContent.clientHeight);
+    }
     // 存放到视图中
     function addChatDataToView(whitWho,message) {
         if (currentWithWhomChat != whitWho) { return }
         let chatView = $("#chatContent");
+        function getChatItemString(childNodeString) {
+            return `
+               <div class="chat_item">
+                    ${childNodeString}
+               </div>
+            `
+        }
         // 还是与ta聊天,需要更新到视图
         if ( message.soure == "wo") {
             chatView.html(chatView.html() + `
                 <div class="my">
-                    <img src="img/headImg.svg" />
                     <span class="text">${message.message}</span>
+                    <img src="img/headImg.svg" />
                 </div>
-            `)
+            `);
         }else {
             // 是“ta”发来的
             chatView.html(chatView.html() + `
@@ -56,10 +73,13 @@ $(function () {
                         <img src="img/headImg.svg" />
                         <span class="text">${message.message}</span>
                     </div>
-            `)
+            `);
         }
+        // 滚动到底部
+        chatContainerScrollToBottom();
 
     }
+
     // 聊天记录还原到视图
     function revertView(whitWho,chatData) {
         // 清空原视图数据
@@ -70,6 +90,10 @@ $(function () {
         for (let item of chatData) {
             addChatDataToView(whitWho,item)
         }
+        // 滚动到底部
+        chatContainerScrollToBottom();
+
+
     }
     // 初始化聊天记录
     let SAVE_FLAG = "chatData"
