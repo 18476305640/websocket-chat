@@ -44,6 +44,8 @@ input[type='text'],input[type='password'] {
     text-align: center;
     background: #5ae088;
     border: none;
+    color: #ffffff;
+    font-weight: 700;
 }
 label {
     color: #5f6368;
